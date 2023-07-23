@@ -239,23 +239,13 @@ const Home = ({ frontmatter }) => {
           {benefits.map((benefit, i) => (
             <div key={`key-${i}`} className="col-12 mb-8 sm:col-6 lg:col-4">
               {benefit.image && (
-                <>
-                  <Image
-                    className="rounded-lg"
-                    src={benefit.image}
-                    alt={benefit.title}
-                    width={425}
-                    height={325}
-                  />
-                  <Image
-                    className="mx-auto mt-12"
-                    src={banner.image}
-                    width={250}
-                    height={390}
-                    alt="banner image"
-                    priority
-                  />
-                </>
+                <Image
+                  className="rounded-lg"
+                  src={benefit.image}
+                  alt={benefit.title}
+                  width={425}
+                  height={325}
+                />
               )}
               <h2 className="h3 mb-2 mt-4">
                 <Link
