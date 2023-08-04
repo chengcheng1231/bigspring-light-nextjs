@@ -1,15 +1,15 @@
 {
   "main": [
     {
-      "name": "About Us",
+      "name": "aboutUs",
       "id": "about_us"
     },
     {
-      "name": "Technology",
+      "name": "technology",
       "id": "technology"
     },
     {
-      "name": "Benefits",
+      "name": "benefits",
       "id": "benefits"
     }
   ],

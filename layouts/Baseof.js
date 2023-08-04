@@ -57,10 +57,10 @@ const Base = ({
           content={plainify(description ? description : meta_description)}
         />
         <meta property="og:type" content="website" />
-        <meta
+        {/* <meta
           property="og:url"
           content={`${base_url}/${router.asPath.replace("/", "")}`}
-        />
+        /> */}
 
         {/* twitter-title */}
         <meta

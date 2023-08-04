@@ -3,6 +3,7 @@ import theme from "@config/theme.json";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import TagManager from "react-gtm-module";
+import { appWithTranslation } from "next-i18next";
 import "styles/style.scss";
 
 const App = ({ Component, pageProps }) => {
@@ -58,4 +59,4 @@ const App = ({ Component, pageProps }) => {
   );
 };
 
-export default App;
+export default appWithTranslation(App);

@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import config from "@config/config.json";
 import Base from "@layouts/Baseof";
 import Cta from "@layouts/components/Cta";
@@ -9,15 +10,24 @@ import { Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
 import { getListPage } from "../lib/contentParser";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
-const Home = ({ frontmatter }) => {
-  const { banner, feature, verra, services, benefits, contact_us, call_to_action } = frontmatter;
+const Home = (props) => {
+  const {
+    banner,
+    feature,
+    verra,
+    services,
+    benefits,
+    contact_us,
+    call_to_action,
+  } = props.frontmatter;
   const { title } = config.site;
 
   return (
     <Base title={title}>
       {/* Banner */}
-      <section className="section pb-[50px] mt-[77px]">
+      <section className="section mt-[77px] pb-[50px]">
         <div className="container">
           <div className="row text-center">
             <div className="mx-auto lg:col-10">
@@ -46,9 +56,7 @@ const Home = ({ frontmatter }) => {
       </section>
 
       {/* Indroduction */}
-      <section
-        className={`section bg-theme-light`}
-      >
+      <section className={`section bg-theme-light`}>
         <div className="container">
           <div className="items-center gap-8 md:grid md:grid-cols-2">
             {/* Carousel */}
@@ -74,14 +82,12 @@ const Home = ({ frontmatter }) => {
             </div>
 
             {/* Indroduction */}
-            <div
-              className={`service-content mt-5 md:mt-0`}
-            >
+            <div className={`service-content mt-5 md:mt-0`}>
               <h2 className="font-bold leading-[40px]">
-              COCOONCO2: 
-              Pioneering Carbon Reduction and Enhanced Sustainability in Cement and Concrete
+                COCOONCO2: Pioneering Carbon Reduction and Enhanced
+                Sustainability in Cement and Concrete
               </h2>
-              <p className="mt-4 mb-2">content</p>
+              <p className="mb-2 mt-4">content</p>
               {/* {service.button.enable && (
                 <Link
                   href={service?.button.link}
@@ -145,8 +151,10 @@ const Home = ({ frontmatter }) => {
                       !isOdd && "md:order-1"
                     }`}
                   >
-                    <h2 className="font-bold leading-[40px]">{service?.title}</h2>
-                    <p className="mt-4 mb-2">{service?.content}</p>
+                    <h2 className="font-bold leading-[40px]">
+                      {service?.title}
+                    </h2>
+                    <p className="mb-2 mt-4">{service?.content}</p>
                     {service.button.enable && (
                       <Link
                         href={service?.button.link}
@@ -234,8 +242,8 @@ const Home = ({ frontmatter }) => {
 
       {/* Benefits */}
       <div className="section px-10" id="benefits">
-        <h2 className="text-center font-bold leading-[40px] mb-10">Benefits</h2>
-        <div className="flex flex-wrap justify-center w-full px-10">
+        <h2 className="mb-10 text-center font-bold leading-[40px]">Benefits</h2>
+        <div className="flex w-full flex-wrap justify-center px-10">
           {benefits.map((benefit, i) => (
             <div key={`key-${i}`} className="col-12 mb-8 sm:col-6 lg:col-4">
               {benefit.image && (
@@ -282,17 +290,18 @@ const Home = ({ frontmatter }) => {
           height={296}
         />
       </section> */}
-  
     </Base>
   );
 };
 
-export const getStaticProps = async () => {
+export const getStaticProps = async ({ locale }) => {
   const homePage = await getListPage("content/_index.md");
   const { frontmatter } = homePage;
+
   return {
     props: {
       frontmatter,
+      ...(await serverSideTranslations(locale, ["common"])),
     },
   };
 };
