@@ -1,6 +1,98 @@
 {
   "header": {
-    "aboutUs": "關於我們"
+    "aboutUs": "關於我們",
+    "technology": "技術",
+    "benefits": "益處",
+    "requestSample": "索取樣品"
   },
-  "description": "敘述"
+  "intro": {
+    "title": "COCOONCO2: <br/> Pioneering Carbon Reduction and Enhanced Sustainability in Cement and Concrete",
+    "description": "粗估全球建築業每年對混凝土的需求大約在50到70億立方米之間。它消耗大約14到20億公噸水泥，並每年排放相當重量的二氧化碳到大氣中。<br/><br/> 水泥和混凝土行業制定了2050年實現零碳混凝土的路線圖。碳稅和碳權交易是領導行業減少碳排放的強制手段，最終目標是降低工業產品的碳足跡（PCF），否則將被逐步淘汰。<br/><br/>在製造過程的五個生命週期評估步驟中，COCOONCO2能夠在第一步驟-原材料、第二步驟-製造、第三步驟-運輸、第四步驟-使用和第五步驟-回收中，分別對水泥和混凝土的碳足跡降低做出貢獻，而從第一範疇和第三範疇來做碳管理的改善。<br/><br/>粗估全球建筑业每年对混凝土的需求大约在50到70亿立方米之间。它消耗大约14到20亿公吨水泥，并每年排放相当重量的二氧化碳到大气中。"
+  },
+  "aboutUs": {
+    "title": "關於我們",
+    "subTitle": "作為水泥、混凝土與化學的橋樑",
+    "description": "我們致力於爲水泥和混凝土行業創造化學，以便在2050年之前實現零碳混凝土的目標。無論何時何地應用COCOONCO2，我們將創建綠色和低碳倡議主題的信用證書。"
+  },
+  "technology": {
+    "title": "Technology",
+    "subTitle": "What COCOONCO2 can do",
+    "content": [
+      {
+        "post": {
+          "title": "透過COCOONCO2封存二氧化碳",
+          "subtitle": "碳封存",
+          "description": "COCOONCO2採用了一種新穎的技術，將CO2嵌入碳酸鹽中，可以在混凝土的攪拌混合製造過程中儲存1~37%的CO2，處理過程中沒有任何碳泄漏。",
+          "image": "/images/Technology-1.jpeg"
+        }
+      },
+      {
+        "post": {
+          "title": "透過 COCOONCO2 吸附二氧化碳",
+          "subtitle": "碳吸附",
+          "description": "COCOONCO2採用了一種新穎的技術，通常應用於碳吸附和脫附化學藥劑。這種技術在運輸和回收步驟中有效地應用。",
+          "image": "/images/Technology-2.jpeg"
+        }
+      },
+      {
+        "post": {
+          "title": "透過 COCOONCO2降低二氧化碳",
+          "subtitle": "減碳",
+          "description": "COCOONCO2採用了最先進的技術，利用合成的化學品，增加混凝土的緻密性；與水泥和補充水泥材料（如礦渣和粉煤灰）中的金屬離子螯合，從而顯著增強混凝土的後期強度。它可以減少水泥及其補充材料的使用量，以滿足設計中規定的工程強度，間接減少水泥所產生的二氧化碳，降低產品的碳足跡。通過一些配方，可以減少5~30%的水泥使用量。",
+          "image": "/images/Technology-3.jpeg"
+        }
+      }
+    ]
+  },
+  "certificate": {
+    "title": "認證",
+    "description": "爲了展示COCOONCO2 在二氧化碳封存和後期強度增強方面的性能。"
+  },
+  "verra": {
+    "title": "Verra認證",
+    "description": "它旨在爲COCOONCO2 的客戶提供經過驗證的選項VCS（Verified Carbon Standard）和VCU（Verified Carbon Units）認可，作爲降低並獲得認可的產品碳足跡（PCF）的證明，以及在公開市場上進行碳權交易。"
+  },
+  "benefits": {
+    "title": "益處",
+    "content": [
+      {
+        "title": "碳信用證明",
+        "description": "通過COCOONCO2 的使用，預拌混凝土生產商可以將一或數公斤的二氧化碳封存，成爲碳捕集和儲存（CCS）的作法，從而抵消製造過程中產生的二氧化碳。同時，通過混凝土的後期強度增強，設計師能夠減少水泥和補充水泥材料的使用，以滿足工程規範，降低產品的碳足跡。粗略估計，每立方米混凝土可以減少超過20公斤以上的二氧化碳排放，既來自碳封存，又來自減排。",
+        "image": "/images/Benefits-1.jpeg"
+      },
+      {
+        "title": "節約成本",
+        "description": "通過COCOONCO2的應用，預拌混凝土生產商將可以豁免碳稅，並且從原材料中節省水泥和補充水泥材料的成本。粗略估計，每立方米混凝土可節省幾美元的費用。",
+        "image": "/images/Benefits-2.jpeg"
+      },
+      {
+        "title": "增強性能",
+        "description": "通過COCOONCO2的應用，它將提供緻密性更高、強度更強的混凝土，並保護鋼筋免受混凝土的中和作用（當混凝土的pH值下降時，即鈣碳酸鹽或氯化物的形成，導致鋼筋腐蝕）",
+        "image": "/images/Benefits-3.jpeg"
+      },
+      {
+        "title": "碳權交易",
+        "description": "通過COCOONCO2的應用，預拌混凝土生產商可以在符合強制的碳排總量管制下，將多節省下的二氧化碳排放來交易碳權。",
+        "image": "/images/Benefits-4.jpeg"
+      },
+      {
+        "title": "符合永續經營的供應商形象",
+        "description": "通過COCOONCO2的應用，預拌混凝土生產商將被視爲永續經營的製造商，成爲提供低碳足跡產品，能夠主動減少二氧化碳排放的供應商，不會在市場上被淘汰。",
+        "image": "/images/Benefits-5.jpeg"
+      }
+    ]
+  },
+  "contactUs": {
+    "title": "聯繫我們",
+    "description": "您的訊息將發送到 contact@cocoonco2.com",
+    "form": {
+      "firstName": "名",
+      "lastName": "姓",
+      "companyName": "公司名稱",
+      "position": "職位",
+      "email": "電子郵件",
+      "message": "您的留言"
+    },
+    "requestSample": "索取樣品"
+  }
 }

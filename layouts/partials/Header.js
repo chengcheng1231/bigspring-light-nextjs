@@ -69,9 +69,6 @@ const Header = () => {
   }, []);
 
   useEffect(() => {
-    console.log("router", router);
-    console.log("locale", locale);
-    console.log("language", language);
     if (language === "English") {
       router.push("/", "/", { locale: "en" });
       i18n.changeLanguage("en");
@@ -80,18 +77,10 @@ const Header = () => {
       router.push("/", "/", { locale: "tw" });
       i18n.changeLanguage("tw");
     }
-    // router.push("/", "/", { locale: "en" });
-
-    // if (router.defaultLocale === "en" || language === "English") {
-    //   setLanguage("English");
-    //   i18n.changeLanguage("en");
-    // } else if (router.defaultLocale === "zh-TW" || language === "繁體中文") {
-    //   setLanguage("繁體中文");
-    //   i18n.changeLanguage("zh-TW");
-    // } else if (router.defaultLocale === "zh-CN" || language === "简体中文") {
-    //   setLanguage("简体中文");
-    //   i18n.changeLanguage("zh-CN");
-    // }
+    if (language === "简体中文") {
+      router.push("/", "/", { locale: "cn" });
+      i18n.changeLanguage("cn");
+    }
   }, [language]);
 
   useEffect(() => {
@@ -99,7 +88,7 @@ const Header = () => {
       setLanguage("English");
     } else if (router.locale === "tw") {
       setLanguage("繁體中文");
-    } else if (router.locale === "zh-CN") {
+    } else if (router.locale === "cn") {
       setLanguage("简体中文");
     }
   }, [router]);
@@ -218,40 +207,6 @@ const Header = () => {
                     {t(`header.${menu.name}`)}
                   </button>
                 </li>
-                {/* {menu.hasChildren ? (
-                  <li className="nav-item nav-dropdown group relative">
-                    <span className="nav-link inline-flex items-center">
-                      {menu.name}
-                      <svg className="h-4 w-4 fill-current" viewBox="0 0 20 20">
-                        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                      </svg>
-                    </span>
-                    <ul className="nav-dropdown-list hidden group-hover:block md:invisible md:absolute md:block md:opacity-0 md:group-hover:visible md:group-hover:opacity-100">
-                      {menu.children.map((child, i) => (
-                        <li className="nav-dropdown-item" key={`children-${i}`}>
-                          <Link
-                            href={child.url}
-                            className="nav-dropdown-link block"
-                          >
-                            {child.name}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </li>
-                ) : (
-                  <li className="nav-item">
-                    <Link
-                      href={menu.url}
-                      onClick={() => setNavOpen(false)}
-                      className={`nav-link block ${
-                        router.asPath === menu.url ? "nav-link-active" : ""
-                      }`}
-                    >
-                      {menu.name}
-                    </Link>
-                  </li>
-                )} */}
               </React.Fragment>
             ))}
             {enable && (
@@ -276,7 +231,7 @@ const Header = () => {
                 rel=""
                 onClick={() => scrollTo(scroll_id)}
               >
-                {label}
+                {t("header.requestSample")}
               </button>
               <LanguageDropdown />
             </div>

@@ -15,51 +15,16 @@
   ],
   "footer": [
     {
-      "name": "Company",
-      "menu": [
-        {
-          "text": "Pricing",
-          "url": "/pricing"
-        },
-        {
-          "text": "Quick Start",
-          "url": "#"
-        }
-      ]
+      "name": "aboutUs",
+      "id": "about_us"
     },
     {
-      "name": "Product",
-      "menu": [
-        {
-          "text": "Features",
-          "url": "#"
-        },
-        {
-          "text": "Platform",
-          "url": "#"
-        },
-        {
-          "text": "Pricing",
-          "url": "/pricing"
-        }
-      ]
+      "name": "technology",
+      "id": "technology"
     },
     {
-      "name": "Support",
-      "menu": [
-        {
-          "text": "FAQ",
-          "url": "/faq"
-        },
-        {
-          "text": "Privacy Policy",
-          "url": "#"
-        },
-        {
-          "text": "Terms & Conditions",
-          "url": "#"
-        }
-      ]
+      "name": "benefits",
+      "id": "benefits"
     }
   ]
 }
