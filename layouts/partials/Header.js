@@ -96,6 +96,7 @@ const Header = () => {
   const scrollTo = (id) => {
     const element = document.getElementById(id);
     if (element) {
+      // add height to the element
       element.scrollIntoView({
         behavior: "smooth",
       });

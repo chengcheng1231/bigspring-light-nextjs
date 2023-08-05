@@ -1,4 +1,5 @@
 {
+  "explore": "探索更多",
   "header": {
     "aboutUs": "关于我们",
     "technology": "技术",
@@ -15,8 +16,8 @@
     "description": "我们致力于为水泥和混凝土行业创造化学，以便在2050年之前实现零碳混凝土的目标。无论何时何地应用COCOONCO2，我们将创建绿色和低碳倡议主题的信用证书。"
   },
   "technology": {
-    "title": "Technology",
-    "subTitle": "What COCOONCO2 can do",
+    "title": "技术",
+    "subTitle": "什么是 COCOONCO2 能做的？",
     "content": [
       {
         "post": {

@@ -29,7 +29,6 @@ const Footer = () => {
         {/* footer menu */}
         <div className="row">
           {footer.map((col) => {
-            console.log("col", col);
             return (
               <button
                 className="mb-12 sm:col-6 lg:col-3"
