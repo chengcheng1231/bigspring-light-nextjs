@@ -98,7 +98,6 @@ const Header = () => {
     if (element) {
       // add height to the element
       element.scrollIntoView({
-        top: element.offsetTop - 20,
         behavior: "smooth",
       });
     } else {
