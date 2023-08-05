@@ -29,6 +29,17 @@ const Home = (props) => {
   const benefitsData = t("benefits.content", { returnObjects: true });
   const contactData = t("contactUs", { returnObjects: true });
 
+  const scrollTo = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+      });
+    } else {
+      console.warn("Element with ID '" + id + "' not found.");
+    }
+  };
+
   return (
     <Base title={title}>
       {/* Banner */}
@@ -47,8 +58,9 @@ const Home = (props) => {
                 className="btn btn-primary z-0 mt-8  py-[10px] "
                 rel=""
                 type="button"
+                onClick={() => scrollTo("introduction")}
               >
-                Explore
+                {t("explore")}
               </button>
               {/* {banner.button.enable && (
                 <Link
@@ -130,8 +142,9 @@ const Home = (props) => {
 
       {/* Technology */}
       <section className="section" id="technology">
-        <h2 className="text-center font-bold leading-[40px]">Technology</h2>
-
+        <h2 className="mt-4 text-center font-bold leading-[40px]">
+          {markdownify(t("technology.title"))}
+        </h2>
         {technologyData.map((item, index) => {
           const isOdd = index % 2 > 0;
           return (
@@ -257,7 +270,7 @@ const Home = (props) => {
       {/* Benefits */}
       <div className="section px-10" id="benefits">
         <div className="container">
-          <h2 className="mb-10 text-center font-bold leading-[40px]">
+          <h2 className="my-14 text-center font-bold leading-[40px]">
             {markdownify(t("benefits.title"))}
           </h2>
           <div className="flex w-full flex-wrap justify-center px-10">

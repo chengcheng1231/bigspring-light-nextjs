@@ -16,6 +16,7 @@ const Footer = () => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({
+        top: 50,
         behavior: "smooth",
       });
     } else {
@@ -29,7 +30,6 @@ const Footer = () => {
         {/* footer menu */}
         <div className="row">
           {footer.map((col) => {
-            console.log("col", col);
             return (
               <button
                 className="mb-12 sm:col-6 lg:col-3"
