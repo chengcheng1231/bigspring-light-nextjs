@@ -1,0 +1,114 @@
+{
+  "header": {
+    "aboutUs": "About Us",
+    "technology": "Technology",
+    "benefits": "Benefits",
+    "requestSample": "Request Sample"
+  },
+  "banner": {
+    "title": "COCOONCO2: <br/> Leading the Way to a Low Carbon Future",
+    "description": "Revolutionizing Industries through Innovative Carbon Reduction Solutions"
+  },
+  "intro": {
+    "title": "COCOONCO2: <br/> Pioneering Carbon Reduction and Enhanced Sustainability in Cement and Concrete",
+    "description": "A rough estimation, annual demand of concrete for all constructions globally is around 5 to 7 billion cubic meters. It consumes around 1.4 to 2.0 billion metric tons of cement, and exhausts equivalent metric tons of CO₂ to air a year. <br/><br/> Cement & concrete industry set forth Net Zero Concrete by 2050 in Roadmap. Carbon tax and trade of carbon rights are mandatory means to guide the industries to reduce the carbon emission, the eventual goal is to drive a lower product carbon footprint (PCF) from industries. Otherwise, to be phased out. <br/><br/> In five steps of manufacturing’s life cycle assessment, COCOONCO2 is able to contribute to lower down PCF to cement and concrete in Step 1 – raw materials, Step 2 – manufacturing, Step 3 – transportation, Step 4 - usage and Step 5 - recycling, in terms of Scope 1 and Scope 3 in carbon management improvement respectively."
+  },
+  "aboutUs": {
+    "title": "About Us",
+    "subTitle": "Bridge for Cement, Concrete & Chemistry",
+    "description": "We create chemistry to cement and concrete industry, in order to head the way of Zero Carbon Concrete by 2050. We will create credit certificates to Green and Low Carbon Initiatives topics, whenever and wherever COCOONCO2 is applied."
+  },
+  "technology": {
+    "title": "Technology",
+    "subTitle": "What COCOONCO2 can do",
+    "content": [
+      {
+        "post": {
+          "title": "CO₂ Stored in COCOONCO2",
+          "subtitle": "Carbon Sequestration",
+          "description": "A novel technology to adopt CO₂ embedded carbonates in COCOONCO2, 1~37% CO₂ can be stored in concrete during blending manufacturing, no any carbon leakage in processing.",
+          "image": "/images/Technology-1.jpeg"
+        }
+      },
+      {
+        "post": {
+          "title": "CO₂ Adsorbed thru COCOONCO2",
+          "subtitle": "Carbon Adsorption",
+          "description": "A novel technology to adopt commonly applied to carbon adsorption and desorption chemical agents in COCOONCO2. This is valid in transportation and recycling steps.",
+          "image": "/images/Technology-2.jpeg"
+        }
+      },
+      {
+        "post": {
+          "title": "CO₂ Reduced by COCOONCO2",
+          "subtitle": "Carbon Reduction",
+          "description": "A state-of-the-art technology to adopt the synthesized chemicals in COCOONCO2, to increase the density of the concrete; to chelate with metal ions in cement and the supplement cement materials (SCM, such slag and fly ash) so that all enhance the late strength of concrete significantly. It can decrease the cement and its SCM usage to meet defined engineering strength in design, indirectly reduce CO₂ borne by cement for lower PCF product. With some recipes, it can reduce 5~30% of cement usage.",
+          "image": "/images/Technology-3.jpeg"
+        }
+      }
+    ]
+  },
+  "certificate": {
+    "title": "Certificate",
+    "description": "It’s to demonstrate the performance of COCOONCO2 in CO₂ sequestration and late strength enhancement"
+  },
+  "verra": {
+    "title": "Verra",
+    "description": "It’s to provide COCOONCO2 clients a verified option VCS with VCU endorsement, as a proof of a lowered and recognized PCF, as well as transaction of carbon rights in public platforms.",
+    "content": [
+      {
+        "title": "Verified Carbon System",
+        "description": "Under construction.",
+        "image": "/images/file-lines-solid.svg"
+      },
+      {
+        "title": "Verified Carbon Unit",
+        "description": "Under construction.",
+        "image": "/images/file-lines-solid.svg"
+      }
+    ]
+  },
+  "benefits": {
+    "title": "Benefits",
+    "content": [
+      {
+        "title": "Carbon Credits",
+        "description": "By means of COCOONCO2, Ready Mix Concrete producers can store kilogram(s) of CO₂ as an option of Carbon Captured Storge (CCS), which will offset CO₂ generated in manufacturing. Along with the late strength enhancement, designers will be able to reduce cement and SCM to meet engineering spec., lower PCF counts. Rough estimation, > 20 kgs CO₂ will be reduced in a cubic meter concrete, both from carbon sequestration and reduction.",
+        "image": "/images/Benefits-1.jpeg"
+      },
+      {
+        "title": "Cost Saving",
+        "description": "By means of COCOONCO2, Ready Mix Concrete producers will be exempted from carbon tax and cement/SCM cost from raw materials. Rough estimation, it will be a few US dollars’ saving in a cubic meter.",
+        "image": "/images/Benefits-2.jpeg"
+      },
+      {
+        "title": "Performance Enhancement",
+        "description": "will deliver higher density concrete with stronger strength, and the protection to steel bars from concrete’s neutralization (calcium carbonate or chloride’s formation to cause steel bar’s erosion while pH value in concrete drops).",
+        "image": "/images/Benefits-3.jpeg"
+      },
+      {
+        "title": "Carbon Right Transaction",
+        "description": "By means of COCOONCO2, Ready Mix Concrete producers can trade Carbon Right if there is excessive saving of CO₂ emission to the ceiling of mandatory mass control.",
+        "image": "/images/Benefits-4.jpeg"
+      },
+      {
+        "title": "Image of a Sustainable Vendor",
+        "description": "By means of COCOONCO2, Ready Mix Concrete producers will be considered a sustainable manufacturer who can initiatively reduce CO₂ emission as a low PCF supplier, won’t be phased out in market.",
+        "image": "/images/Benefits-5.jpeg"
+      }
+    ]
+  },
+  "contactUs": {
+    "title": "Contact Us",
+    "description": "Your message will send to contact@cocoonco2.com",
+    "form": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "companyName": "Company Name",
+      "position": "Position",
+      "email": "Email Address",
+      "message": "Your Message"
+    },
+    "requestSample": "Request Sample"
+  }
+}

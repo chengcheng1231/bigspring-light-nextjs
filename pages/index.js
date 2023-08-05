@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import config from "@config/config.json";
 import Base from "@layouts/Baseof";
 import Cta from "@layouts/components/Cta";
@@ -5,25 +6,51 @@ import Contact from "@layouts/Contact";
 import { markdownify } from "@lib/utils/textConverter";
 import Image from "next/image";
 import Link from "next/link";
-import { Autoplay, Pagination } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
 import { getListPage } from "../lib/contentParser";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 
-const Home = ({ frontmatter }) => {
-  const { banner, feature, verra, services, benefits, contact_us, call_to_action } = frontmatter;
+const Home = (props) => {
+  const {
+    banner,
+    feature,
+    verra,
+    services,
+    benefits,
+    contact_us,
+    call_to_action,
+  } = props.frontmatter;
   const { title } = config.site;
+  const { t } = useTranslation("common");
+
+  const technologyData = t("technology.content", { returnObjects: true });
+  const verraData = t("verra.content", { returnObjects: true });
+  const benefitsData = t("benefits.content", { returnObjects: true });
+  const contactData = t("contactUs", { returnObjects: true });
 
   return (
     <Base title={title}>
       {/* Banner */}
-      <section className="section pb-[50px] mt-[77px]">
-        <div className="container">
-          <div className="row text-center">
-            <div className="mx-auto lg:col-10">
-              <h1 className="font-primary font-bold">{banner.title}</h1>
-              <p className="mt-4">{markdownify(banner.content)}</p>
-              {banner.button.enable && (
+      <section className="section mt-[77px] pb-[50px]">
+        <div className="align-center container flex h-[400px] items-center ">
+          <div className="row">
+            <div className="mx-auto">
+              <h1 className="text-left font-primary font-[40px] font-bold">
+                {markdownify(t("banner.title"))}
+              </h1>
+              <p className="mt-4 text-left">
+                {markdownify(t("banner.description"))}
+              </p>
+
+              <button
+                className="btn btn-primary z-0 mt-8  py-[10px] "
+                rel=""
+                type="button"
+              >
+                Explore
+              </button>
+              {/* {banner.button.enable && (
                 <Link
                   className="btn btn-primary mt-4"
                   href={banner.button.link}
@@ -31,128 +58,119 @@ const Home = ({ frontmatter }) => {
                 >
                   {banner.button.label}
                 </Link>
-              )}
-              <Image
+              )} */}
+              {/* <Image
                 className="mx-auto mt-12"
                 src={banner.image}
                 width={750}
                 height={390}
                 alt="banner image"
                 priority
-              />
+              /> */}
             </div>
           </div>
         </div>
       </section>
 
       {/* Indroduction */}
-      <section
-        className={`section bg-theme-light`}
-      >
+      <section className={`section bg-theme-light`} id="introduction">
         <div className="container">
-          <div className="items-center gap-8 md:grid md:grid-cols-2">
-            {/* Carousel */}
-            <div className={`service-carousel`}>
-              <Swiper
-                modules={[Autoplay, Pagination]}
-                // pagination={
-                //   service.images.length > 1 ? { clickable: true } : false
-                // }
-                autoplay={{
-                  delay: 5000,
-                  disableOnInteraction: false,
-                }}
-                // init={service?.images > 1 ? false : true}
-              >
-                {/* Slides */}
-                {/* {service?.images.map((slide, index) => (
-                  <SwiperSlide key={index}>
-                    <Image src={slide} alt="" width={600} height={500} />
-                  </SwiperSlide>
-                ))} */}
-              </Swiper>
-            </div>
-
-            {/* Indroduction */}
-            <div
-              className={`service-content mt-5 md:mt-0`}
-            >
+          <div className="relative items-center gap-8 md:grid md:grid-cols-2">
+            <div className={`service-content z-10 mt-5 md:mt-0`}>
               <h2 className="font-bold leading-[40px]">
-              COCOONCO2: 
-              Pioneering Carbon Reduction and Enhanced Sustainability in Cement and Concrete
+                {markdownify(t("intro.title"))}
               </h2>
-              <p className="mt-4 mb-2">content</p>
-              {/* {service.button.enable && (
-                <Link
-                  href={service?.button.link}
-                  className="cta-link inline-flex items-center text-primary"
-                >
-                  {service?.button.label}
-                  <Image
-                    className="ml-1"
-                    src="/images/arrow-right.svg"
-                    width={18}
-                    height={14}
-                    alt="arrow"
-                  />
-                </Link>
-              )} */}
+              <p className="mb-2 mt-4">{markdownify(t("intro.description"))}</p>
             </div>
+            <Image
+              src="/images/Introduction.jpeg"
+              width={800}
+              height={600}
+              alt="indroduction"
+              className="right-0 top-0 rounded-xl object-cover"
+            />
           </div>
         </div>
       </section>
 
       {/* About Us */}
-      <Cta cta={call_to_action} />
+      <section className="section px-4" id="about_us">
+        <div className="section container rounded-xl shadow">
+          <div className="row  mx-auto items-center justify-center">
+            <div className="mt-5 text-center md:col-6 lg:col-5 md:mt-0 md:text-left">
+              <h2>{markdownify(t("aboutUs.title"))}</h2>
+              <p className="mt-6 font-bold italic">
+                {markdownify(t("aboutUs.subTitle"))}
+              </p>
+              <p className="bold mt-6">
+                {markdownify(t("aboutUs.description"))}
+              </p>
+              {/* {cta.button.enable && (
+                <Link
+                  className="btn btn-primary mt-4"
+                  href={cta.button.link}
+                  rel={cta.button.rel}
+                >
+                  {cta.button.label}
+                </Link>
+              )} */}
+            </div>
+            <div className="md:col-5 lg:col-4">
+              <Image
+                className="w-full"
+                src={"/images/logoWithSlogan.svg"}
+                alt="call to action image"
+                width={325}
+                height={206}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Technology */}
       <section className="section" id="technology">
         <h2 className="text-center font-bold leading-[40px]">Technology</h2>
-        {services.map((service, index) => {
+
+        {technologyData.map((item, index) => {
           const isOdd = index % 2 > 0;
           return (
             <section
-              key={`service-${index}`}
+              key={`item-${index}`}
               className={`section ${isOdd && "bg-theme-light"}`}
             >
               <div className="container">
                 <div className="items-center gap-8 md:grid md:grid-cols-2">
                   {/* Carousel */}
-                  <div className={`service-carousel ${!isOdd && "md:order-2"}`}>
-                    <Swiper
-                      modules={[Autoplay, Pagination]}
-                      pagination={
-                        service.images.length > 1 ? { clickable: true } : false
-                      }
-                      autoplay={{
-                        delay: 5000,
-                        disableOnInteraction: false,
-                      }}
-                      init={service?.images > 1 ? false : true}
-                    >
-                      {/* Slides */}
-                      {service?.images.map((slide, index) => (
-                        <SwiperSlide key={index}>
-                          <Image src={slide} alt="" width={600} height={500} />
-                        </SwiperSlide>
-                      ))}
-                    </Swiper>
+                  <div className={`item-carousel ${!isOdd && "md:order-2"}`}>
+                    <Image
+                      src={item?.post.image}
+                      alt="technology"
+                      className="right-0 top-0 rounded-xl object-cover"
+                      width={600}
+                      height={500}
+                    />
                   </div>
 
                   {/* Content */}
                   <div
-                    className={`service-content mt-5 md:mt-0 ${
+                    className={`item-content mt-5 md:mt-0 ${
                       !isOdd && "md:order-1"
                     }`}
                   >
-                    <h2 className="font-bold leading-[40px]">{service?.title}</h2>
-                    <p className="mt-4 mb-2">{service?.content}</p>
-                    {service.button.enable && (
+                    <h2 className="font-bold leading-[40px]">
+                      {item?.post.title}
+                    </h2>
+                    <h3 className="font-bold text-neutral-400">
+                      {item?.post.subtitle}
+                    </h3>
+                    <p className="mb-2 mt-4">{item?.post.description}</p>
+                    {/* {item.button.enable && (
                       <Link
-                        href={service?.button.link}
+                        href={item?.button.link}
                         className="cta-link inline-flex items-center text-primary"
                       >
-                        {service?.button.label}
+                        {item?.button.label}
                         <Image
                           className="ml-1"
                           src="/images/arrow-right.svg"
@@ -161,7 +179,7 @@ const Home = ({ frontmatter }) => {
                           alt="arrow"
                         />
                       </Link>
-                    )}
+                    )} */}
                   </div>
                 </div>
               </div>
@@ -174,10 +192,13 @@ const Home = ({ frontmatter }) => {
       <section className="section bg-theme-light">
         <div className="container">
           <div className="text-center">
-            <h2>{markdownify(feature.title)}</h2>
+            <h2>{markdownify(t("certificate.title"))}</h2>
+            <p className="mt-4">{markdownify(t("certificate.description"))}</p>
+            <h4 className="mt-3 text-neutral-400">Coming Soon...</h4>
           </div>
+
           <div className="mt-8 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
-            {feature.features.map((item, i) => (
+            {/* {feature.features.map((item, i) => (
               <div
                 className="feature-card rounded-xl bg-white p-5 pb-8 text-center"
                 key={`feature-${i}`}
@@ -196,7 +217,7 @@ const Home = ({ frontmatter }) => {
                   <p className="mt-3">{item.content}</p>
                 </div>
               </div>
-            ))}
+            ))} */}
           </div>
         </div>
       </section>
@@ -205,26 +226,27 @@ const Home = ({ frontmatter }) => {
       <section className="section bg-theme-light">
         <div className="container">
           <div className="text-center">
-            <h2>{markdownify(verra.title)}</h2>
+            <h2>{markdownify(t("verra.title"))}</h2>
+            <p className="mt-4">{markdownify(t("verra.description"))}</p>
           </div>
-          <div className="mt-8 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
-            {verra.VerraItems.map((item, i) => (
+          <div className="mt-8 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-2">
+            {verraData.map((item, i) => (
               <div
                 className="feature-card rounded-xl bg-white p-5 pb-8 text-center"
                 key={`feature-${i}`}
               >
-                {item.icon && (
+                {item.image && (
                   <Image
                     className="mx-auto"
-                    src={item.icon}
+                    src={item.image}
                     width={30}
                     height={30}
                     alt=""
                   />
                 )}
                 <div className="mt-4">
-                  {markdownify(item.name, "h3", "h5")}
-                  <p className="mt-3">{item.content}</p>
+                  {markdownify(item.title, "h3", "h5")}
+                  <p className="mt-3">{item.description}</p>
                 </div>
               </div>
             ))}
@@ -234,65 +256,55 @@ const Home = ({ frontmatter }) => {
 
       {/* Benefits */}
       <div className="section px-10" id="benefits">
-        <h2 className="text-center font-bold leading-[40px] mb-10">Benefits</h2>
-        <div className="flex flex-wrap justify-center w-full px-10">
-          {benefits.map((benefit, i) => (
-            <div key={`key-${i}`} className="col-12 mb-8 sm:col-6 lg:col-4">
-              {benefit.image && (
-                <Image
-                  className="rounded-lg"
-                  src={benefit.image}
-                  alt={benefit.title}
-                  width={425}
-                  height={325}
-                />
-              )}
-              <h2 className="h3 mb-2 mt-4">
-                <Link
-                  // href={`/${blog_folder}/${post.slug}`}
-                  href=""
-                  className="block hover:text-primary"
-                >
-                  {benefit.title}
-                </Link>
-              </h2>
-              <p className="text-text">{benefit.content}</p>
-            </div>
-          ))}
+        <div className="container">
+          <h2 className="mb-10 text-center font-bold leading-[40px]">
+            {markdownify(t("benefits.title"))}
+          </h2>
+          <div className="flex w-full flex-wrap justify-center px-10">
+            {benefitsData.map((benefit, i) => (
+              <div
+                key={`key-${i}`}
+                className="mx-4 mb-8 w-[100%] lg:w-[40%] xl:w-[30%]"
+              >
+                {benefit.image && (
+                  <Image
+                    className="mx-auto h-[300px] w-full rounded-lg object-cover lg:h-[200px] lg:w-[400px]"
+                    src={benefit.image}
+                    alt={benefit.title}
+                    width={600}
+                    height={400}
+                  />
+                )}
+                <h2 className="h3 mb-2 mt-4">
+                  <Link
+                    // href={`/${blog_folder}/${post.slug}`}
+                    href=""
+                    className="block hover:text-primary"
+                  >
+                    {benefit.title}
+                  </Link>
+                </h2>
+                <p className="text-text">{benefit.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
       {/* Contact Us */}
-      <Contact data={contact_us} />
-
-      {/* workflow */}
-      {/* <section className="section pb-0">
-        <div className="mb-8 text-center">
-          {markdownify(
-            workflow.title,
-            "h2",
-            "mx-auto max-w-[400px] font-bold leading-[44px]"
-          )}
-          {markdownify(workflow.description, "p", "mt-3")}
-        </div>
-        <Image
-          src={workflow.image}
-          alt="workflow image"
-          width={1920}
-          height={296}
-        />
-      </section> */}
-  
+      <Contact data={contactData} />
     </Base>
   );
 };
 
-export const getStaticProps = async () => {
+export const getStaticProps = async ({ locale }) => {
   const homePage = await getListPage("content/_index.md");
   const { frontmatter } = homePage;
+
   return {
     props: {
       frontmatter,
+      ...(await serverSideTranslations(locale, ["common"])),
     },
   };
 };

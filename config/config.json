@@ -1,8 +1,8 @@
 {
   "site": {
-    "title": "Bigspring Light Nextjs",
+    "title": "COCOONCO2",
     "base_url": "/",
-    "favicon": "/images/favicon.png",
+    "favicon": "/images/logo-COCOONCO2.svg",
     "logo": "/images/logo.svg",
     "logo_width": "200",
     "logo_height": "48",
@@ -25,8 +25,8 @@
   "params": {
     "contact_form_action": "",
     "tag_manager_id": "",
-    "footer_content": "Lorem ipsum dolor sit amet, consectetur elit. Consjat tristique eget amet, tempus eu at cttur.",
-    "copyright": "Designed and Developed By [Themefisher](https://themefisher.com/)"
+    "footer_content": "contact@cocoonoco2 <br/> 02-26666666",
+    "copyright": "Copyright © 2023 COCOONCO2"
   },
 
   "metadata": {
