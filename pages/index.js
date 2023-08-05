@@ -268,12 +268,12 @@ const Home = (props) => {
       </section>
 
       {/* Benefits */}
-      <div className="section px-10" id="benefits">
+      <div className="section pt-0 md:px-10" id="benefits">
         <div className="container">
           <h2 className="my-14 text-center font-bold leading-[40px]">
             {markdownify(t("benefits.title"))}
           </h2>
-          <div className="flex w-full flex-wrap justify-center px-10">
+          <div className="flex w-full flex-wrap justify-center md:px-10">
             {benefitsData.map((benefit, i) => (
               <div
                 key={`key-${i}`}

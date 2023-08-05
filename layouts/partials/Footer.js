@@ -27,19 +27,23 @@ const Footer = () => {
     <footer className="section bg-theme-light pb-0">
       <div className="container">
         {/* footer menu */}
-        <div className="row">
-          {footer.map((col) => {
-            return (
-              <button
-                className="mb-12 sm:col-6 lg:col-3"
-                key={col.name}
-                onClick={() => scrollTo(col.id)}
-              >
-                {markdownify(t(`header.${col.name}`), "h2", "h4")}
-              </button>
-            );
-          })}
-          <div className="md-12 sm:col-6 lg:col-3">
+        <div className="w-full md:flex">
+          <div className="flex-1 md:flex">
+            {footer.map((col) => {
+              return (
+                <div>
+                  <button
+                    className="mb-6 mr-6"
+                    key={col.name}
+                    onClick={() => scrollTo(col.id)}
+                  >
+                    {markdownify(t(`header.${col.name}`), "h2", "h4")}
+                  </button>
+                </div>
+              );
+            })}
+          </div>
+          <div className="md-12 sm:col-4 lg:col-3">
             <Link href="/" aria-label="Bigspring">
               <Image
                 src={config.site.logo}
