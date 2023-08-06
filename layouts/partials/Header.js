@@ -2,7 +2,7 @@ import Logo from "@components/Logo";
 import config from "@config/config.json";
 import menu from "@config/menu.json";
 import Link from "next/link";
-import { useRouter, locale } from "next/router";
+import { useRouter } from "next/router";
 import React, { useState, useEffect } from "react";
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
@@ -109,7 +109,7 @@ const Header = () => {
     return (
       <Menu
         as="div"
-        className="relative mx-3 inline-block flex items-center text-left"
+        className="relative inline-block flex items-center text-left md:mx-3"
       >
         <div>
           <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
@@ -130,7 +130,7 @@ const Header = () => {
           leaveFrom="transform opacity-100 scale-100"
           leaveTo="transform opacity-0 scale-95"
         >
-          <Menu.Items className="absolute right-0 top-10 z-10 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+          <Menu.Items className="absolute  top-10 z-10 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none md:right-0">
             <div className="py-1">
               {languageList.map((item, index) => (
                 <Menu.Item key={index}>
@@ -184,8 +184,8 @@ const Header = () => {
               </svg>
             )}
           </button>
-          <LanguageDropdown />
         </div>
+
         {/* Menu */}
         <div
           id="nav-menu"
@@ -194,6 +194,9 @@ const Header = () => {
           }`}
         >
           <ul className="navbar-nav mr-2 block w-full md:flex md:w-auto lg:space-x-2">
+            <div className="md:hidden">
+              <LanguageDropdown />
+            </div>
             {main.map((menu, i) => (
               <React.Fragment key={`menu-${i}`}>
                 <li className="nav-item">
@@ -223,7 +226,6 @@ const Header = () => {
               </li>
             )}
           </ul>
-
           {enable && (
             <div className="d-flex order-1 ml-auto hidden min-w-[200px] items-center justify-end md:order-2 md:ml-0 md:flex">
               <button
