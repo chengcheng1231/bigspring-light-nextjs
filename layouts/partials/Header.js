@@ -203,9 +203,6 @@ const Header = () => {
                   <button
                     href={menu.url}
                     onClick={() => scrollTo(menu.id)}
-                    // className={`nav-link block ${
-                    //   router.asPath === menu.url ? "nav-link-active" : ""
-                    // }`}
                     className={`nav-link block`}
                   >
                     {t(`header.${menu.name}`)}
@@ -214,14 +211,14 @@ const Header = () => {
               </React.Fragment>
             ))}
             {enable && (
-              <li className="md:hidden">
+              <li className="text-left md:hidden">
                 <button
                   className="btn btn-primary z-0 py-[10px]"
                   href={link}
                   rel=""
                   onClick={() => scrollTo(scroll_id)}
                 >
-                  {label}
+                  {t("header.requestSample")}
                 </button>
               </li>
             )}
