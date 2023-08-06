@@ -156,7 +156,7 @@ const Header = () => {
 
   return (
     <header className={`header show ${isShow && "hide"}`}>
-      <nav className="navbar container">
+      <nav className="navbar md:container ">
         {/* logo */}
         <div className="order-0">
           <Logo src={logo} />
